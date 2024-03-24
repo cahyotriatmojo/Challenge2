@@ -3,20 +3,20 @@
 class Orang
 {
  public $nama;
- public $skor1;
- public $skor2;
+ public $berat1;
+ public $berat2;
 
 
- public function __construct($nama, $skor1, $skor2)
+ public function __construct($nama, $berat1, $berat2)
  {
   $this->nama = $nama;
-  $this->skor1 = $skor1;
-  $this->skor2 = $skor2;
+  $this->berat1 = $berat1;  //untuk menyimpan/mengakses metode dari objek $tim1 yg disimpan dlm class Hasil
+  $this->berat2 = $berat2;
  }
 
  public function hitungMassa()
  {
-  $bmi = $this->skor1 / ($this->skor2 * $this->skor2);
+  $bmi = $this->berat1 / ($this->berat2 * $this->berat2);
   return $bmi;
  }
 }
