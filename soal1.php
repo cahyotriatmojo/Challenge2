@@ -43,7 +43,9 @@ class Hasil
         echo "====================";
         echo "===============================";
 
-        if ($rata_rata_tim1 && $rata_rata_tim2 <= 100) {
+        if ($rata_rata_tim1 > $rata_rata_tim2 && $rata_rata_tim1 >= 100) {
+            echo "Tim {$this->tim1->nama} memenangkan pertandingan <br>";
+        } elseif ($rata_rata_tim1 && $rata_rata_tim2 <= 100) {
             echo "Tim Tidak ada pemenang <br>";
         } elseif ($rata_rata_tim1 < $rata_rata_tim2) {
             echo "Tim {$this->tim2->nama} memenangkan pertandingan <br>";
@@ -55,7 +57,7 @@ class Hasil
 
 // Data uji inputan
 echo "<h3>Data 1</h3>";
-$lumba1 = new Tim("lumba-lumba", 97, 108, 89);
+$lumba1 = new Tim("lumba-lumba", 96, 108, 89);
 $koala1 = new Tim("koala", 88, 91, 110);
 $hasil1 = new Hasil($lumba1, $koala1);
 $hasil1->tampilkanHasil();
